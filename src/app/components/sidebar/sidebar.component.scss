@@ -4,8 +4,8 @@
 .navigation {
   display: flex;
   flex-direction: column;
-  width: 170px;
-  height: 919px;
+  width: 200px;
+  height: 879px;
   background-color: #f8f8f8;
   border: 1px solid #c5c5c5;
 
@@ -18,6 +18,18 @@
     padding: 15px;
     border-bottom: 1px solid #c5c5c5;
     list-style-type: none;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #cfcfcf;
+    }
+
+    &--active {
+      pointer-events: none;
+      border-left: 4px solid #1dadf5;
+      padding-left: 11px;
+    }
   }
 
   &__icon {
@@ -28,5 +40,23 @@
 
   &__text {
     margin-left: 10px;
+  }
+
+  &__expand {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    border-bottom: 1px solid #c5c5c5;
+  }
+
+  &__sub-item {
+    @include font-face(Helvetica, 14px, #111111);
+
+    padding: 0 0 0 44px;
+    outline: none;
+
+    &--active {
+      @include font-face(Helvetica, 14px, #111111, bold);
+    }
   }
 }

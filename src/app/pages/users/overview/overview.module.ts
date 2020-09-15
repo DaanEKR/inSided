@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { OverviewComponent } from './overview.component';
 
 // Modules
@@ -9,7 +8,6 @@ import { OverviewComponent } from './overview.component';
     declarations: [OverviewComponent],
     imports: [
         CommonModule,
-        RouterModule,
         OverviewComponent,
     ],
     exports: [OverviewComponent],
