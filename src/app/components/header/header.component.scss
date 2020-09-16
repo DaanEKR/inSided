@@ -1,14 +1,67 @@
+@import 'variables';
+@import 'mixins';
+
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 99%;
-  height: 50px;
-  background-color: #1a1a1a;
-  padding: 1% 0 1% 1%;
+  height: 30px;
+  background-color: $header;
+  padding: 15px 30px 15px 13px;
 
+  &__personal {
+    display: flex;
+    justify-content: flex-end;
+  }
 
   &__logo {
-    width: auto;
-    height: 40px;
+    width: 84px;
+    height: 25px;
+  }
+}
+
+.small-rounded {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+
+  &__mail {
+      outline: none;
+      cursor: pointer;
+      border: 1px solid $white;
+      background: transparent;
+      margin-right: 10px;
+  }
+
+  &__icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  &__login {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  &__option {
+    @include font-face($primary-font, 12px, $grey);
+
+    text-decoration: none;
+    margin: 0 30px 0 5px;
+  }
+
+  &__name {
+    @include font-face($primary-font, 12px, $white);
+
   }
 }

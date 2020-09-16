@@ -1,16 +1,19 @@
 <nav class="navigation">
-  <li class="navigation__item"><img class="navigation__icon" src="../../../assets/icons/comment-solid.svg"><p class="navigation__text">Forum</p></li>
+  <li class="navigation__item" [routerLink]="['/forum']" routerLinkActive="navigation__item--active">
+    <img class="navigation__icon" src="../../../assets/icons/comment-solid.svg">
+    <p class="navigation__text">Forum</p>
+  </li>
   <li class="navigation__item"><img class="navigation__icon" src="../../../assets/icons/paint-brush-solid.svg"><p class="navigation__text">Blog</p></li>
   <li class="navigation__item"><img class="navigation__icon" src="../../../assets/icons/flask-solid.svg"><p class="navigation__text">Research</p></li>
   <li class="navigation__item"><img class="navigation__icon" src="../../../assets/icons/inbox-solid.svg"><p class="navigation__text">Inbox</p></li>
-  <li class="navigation__item" [routerLink]="['/users']" routerLinkActive="navigation__item navigation__item--active" #rla="routerLinkActive">
+  <li class="navigation__item" [routerLink]="['/users']" routerLinkActive="navigation__item--active" #users="routerLinkActive">
     <img class="navigation__icon" src="../../../assets/icons/user-solid.svg">
     <p class="navigation__text">Users</p>
   </li>
-  <div class="navigation__expand"  *ngIf="rla.isActive">
-    <li class="navigation__sub-item" [routerLink]="['/users/overview']" routerLinkActive="navigation__sub-item navigation__sub-item--active">Overview</li>
-    <li class="navigation__sub-item" [routerLink]="['/users/moderation']" routerLinkActive="navigation__sub-item navigation__sub-item--active">Moderation</li>
-    <li class="navigation__sub-item" [routerLink]="['/users/add']" routerLinkActive="navigation__sub-item navigation__sub-item--active">Add user</li>
+  <div class="navigation__expand"  *ngIf="users.isActive">
+    <li class="navigation__sub-item" [routerLink]="['/users/overview']" routerLinkActive="navigation__sub-item--active">Overview</li>
+    <li class="navigation__sub-item" [routerLink]="['/users/moderation']" routerLinkActive="navigation__sub-item--active">Moderation</li>
+    <li class="navigation__sub-item" [routerLink]="['/users/add']" routerLinkActive="navigation__sub-item--active">Add user</li>
   </div>
   <li class="navigation__item"><img class="navigation__icon" src="../../../assets/icons/cog-solid.svg"><p class="navigation__text">Settings</p></li>
 </nav>
