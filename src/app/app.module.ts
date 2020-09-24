@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from './components/header/header.module';
 import { SidebarModule } from './components/sidebar/sidebar.module';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersModule } from './pages/users/users.module';
+import { FormsModule } from '@angular/forms';
+import { SearchUserPipeModule } from './pipes/search-user/search-user.module';
+import { UsergroupPipeModule } from './pipes/usergroup/usergroup.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HeaderModule,
     SidebarModule,
-    HttpClientModule
+    HttpClientModule,
+    UsersModule,
+    SearchUserPipeModule,
+    UsergroupPipeModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

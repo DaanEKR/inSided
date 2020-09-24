@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/interfaces/user';
-import { UserService } from 'src/app/services/user.service';
+import { User, UserGroup } from 'src/app/interfaces/user';
+import { UserService } from '../../../services/user.service';
 
 @Component({
   selector: 'app-overview',
@@ -9,14 +9,15 @@ import { UserService } from 'src/app/services/user.service';
 })
 
 export class OverviewComponent implements OnInit {
-
+  user: User;
   users: User[] = [];
+  userGroup: UserGroup[];
+  searchTerm: string = '';
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.getAllUsers().subscribe(data => {
       this.users = data;
-      console.log(this.users)
     });
   }
 

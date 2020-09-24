@@ -1,3 +1,51 @@
 <header class="overview-header">
   <h1 class="overview__title">User overview</h1>
+  <div>
+    <select [(ngModel)]="userGroup" class="dropdown" >
+      <option value="all">All</option>
+      <option value="officer">Officer</option>
+      <option value="captain">Captain</option>
+      <option value="colonel">Colonel</option>
+      <option value="general">General</option>
+      <option value="lieutenant">Lieutenant</option>
+  </select>
+    <input class="search" type="text" [(ngModel)]="searchTerm" placeholder="Search for user">
+    <button class="search__button"></button>
+  </div>
 </header>
+<main class="content">
+  <div class="table__interface-options">
+    <p class="table__result">Results: {{users.length}}</p>
+  </div>
+  <table class="table">
+    <thead>
+      <tr class="table__row-head">
+        <th class="table__head-cell table__head-cell--username"><input type="checkbox" class="table__checkbox"><p class="table__username">Username</p></th>
+        <th class="table__head-cell">Email</th>
+        <th class="table__head-cell">Replies</th>
+        <th class="table__head-cell">Topics</th>
+        <th class="table__head-cell">Solved</th>
+        <th class="table__head-cell">Usergroup</th>
+        <th class="table__head-cell">Registration date</th>
+        <th class="table__head-cell">Last login</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users | searchUser:searchTerm | UserGroup:userGroup">
+        <td class="table__body-cell--username">
+          <input type="checkbox" class="table__checkbox">
+          <img class="table__avatar" src="{{user.img}}">
+          <p class="table__username">{{user.first_name}} {{user.last_name}}</p>
+          <img class="table__clone" src="../../../../assets/icons/clone-regular.svg">
+        </td>
+        <td class="table__body-cell"><p>{{user.email}}</p></td>
+        <td class="table__body-cell"><p>{{user.replies}}</p></td>
+        <td class="table__body-cell"><p>{{user.topics}}</p></td>
+        <td class="table__body-cell"><p>{{user.solved}}</p></td>
+        <td class="table__body-cell"><p>{{user.usergroup}}</p></td>
+        <td class="table__body-cell"><p>{{user.registration_date}}</p></td>
+        <td class="table__body-cell"><p>{{user.last_login}}</p></td>
+        </tr>
+    </tbody>
+  </table>
+</main>
